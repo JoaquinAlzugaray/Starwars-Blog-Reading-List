@@ -6,7 +6,7 @@ export const Navbar = () => {
 	<nav className="navbar navbar-light bg-light">
 	<div className="container">
 		<Link to="/">
-		  <span className="navbar-brand mb-0 h1">Star War logo</span>
+		  <img className="navbar-brand mb-0 h1" src="https://img.icons8.com/ios/50/000000/star-wars.png"></img>
 		</Link>
 		<div className="d-flex dropdown">
   <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

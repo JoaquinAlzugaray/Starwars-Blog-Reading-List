@@ -9,12 +9,37 @@ export const Home = () => {
 	console.log(store.characters);
 	return (
 		<div>
+			<div className="container">
 			<h1>Characters</h1>
-			<Card  />
+			</div>
+			<div className="container">
+				<div className="scrollmenu">
+				<Card  />
+				<Card  />
+				<Card  />
+				<Card  />
+				<Card  />
+				<Card  />
+				<Card  />
+				</div>
+			</div>
+			<div className="container">
+				<h1>Planets</h1>
+				<div className="scrollmenu">
+				<Card  />
+				<Card  />
+				<Card  />
+				<Card  />
+				<Card  />
+				<Card  />
+				<Card  />
+				</div>
+			</div>
+			
 			{/* vamos a crear botones dinámicos que nos lleven a la info de cada id */}
-			{store.characters.map((item)=><li key={item.uid}>{item.name}
+			{/* {store.characters.map((item)=><li key={item.uid}>{item.name}
 			<span><Link className="btn btn-primary" to={`/single/${item.uid}`}>Read more!</Link></span>
-			</li>)}
+			</li>)} */}
 		</div>
 		
 		
