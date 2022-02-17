@@ -4,9 +4,18 @@ import { Context } from "../store/appContext";
 import { Card } from "../component/card";
 import { Link } from "react-router-dom";
 
+// img="https://starwars-visualguide.com/assets/img/characters/1.jpg"
+
 export const Home = () => {
 	const {store, actions}=useContext(Context)
 	console.log(store.characters);
+	const cards = store.characters.map((item) => {
+		return 	<Card
+		name={item.name}
+		gender={item.gender}
+		/>
+	  })
+
 	return (
 		<div>
 			<div className="container">
@@ -14,22 +23,12 @@ export const Home = () => {
 			</div>
 			<div className="container">
 				<div className="scrollmenu">
-				<Card  />
-				<Card  />
-				<Card  />
-				<Card  />
-				<Card  />
-				<Card  />
-				<Card  />
+			{cards}
 				</div>
 			</div>
 			<div className="container">
 				<h1>Planets</h1>
 				<div className="scrollmenu">
-				<Card  />
-				<Card  />
-				<Card  />
-				<Card  />
 				<Card  />
 				<Card  />
 				<Card  />
@@ -42,7 +41,8 @@ export const Home = () => {
 			</li>)} */}
 		</div>
 		
-		
+		// {store.characters.map((item)=><span key={item.uid}>{item.name}</span>)}
+
 	);
 }
 
