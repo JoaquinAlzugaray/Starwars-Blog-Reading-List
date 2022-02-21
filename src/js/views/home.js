@@ -10,9 +10,10 @@ export const Home = () => {
 	const {store, actions}=useContext(Context)
 	console.log(store.characters);
 	const cards = store.characters.map((item) => {
-		return 	<Card
+		return 	<Card key={item.uid}
 		name={item.name}
 		gender={item.gender}
+		linkurl={`/single/${item.uid}`}
 		/>
 	  })
 
