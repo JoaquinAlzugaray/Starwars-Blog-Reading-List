@@ -11,20 +11,52 @@ export const Single = props => {
 		actions.loadCharacter(params.theid)
 	},[])
 	return (
-		<div className="jumbotron">
-			<h1 className="display-4">This will show the name of: {store.character?.properties?.name}</h1>
-
-			<hr className="my-4" />
-
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
-				</span>
-			</Link>
-		</div>
-	);
+    <div className="jumbotron container">
+      <div className="row row-col-2 mt-5 mb-5">
+        <div className="col">
+          <img
+            className="singleImg"
+            src="https://lumiere-a.akamaihd.net/v1/images/luke-skywalker-main_fb34a1ff.jpeg?region=131%2C0%2C951%2C536&width=768"
+          ></img>
+        </div>
+        <div className="col text-center">
+          <h4>{store.character?.properties?.name}</h4>
+          <div>
+            <p>{store.character?.description}</p>
+          </div>
+        </div>
+      </div>
+      <hr className="my-4" />
+      <div className="container mt-2 mb-5">
+        <table className="table table-hover table-borderless">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Birth Year</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Height</th>
+			  <th scope="col">Hair Color</th>
+			  <th scope="col">Eye Color</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{store.character?.properties?.name}</td>
+              <td>{store.character?.properties?.birth_year}</td>
+              <td>{store.character?.properties?.gender}</td>
+              <td>{store.character?.properties?.height}</td>
+			  <td>{store.character?.properties?.hair_color}</td>
+			  <td>{store.character?.properties?.eye_color}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 };
 
 Single.propTypes = {
 	match: PropTypes.object
 };
+
+{/* <h1 className="display-4">This will show the name of: {store.character?.properties?.name}</h1> */}

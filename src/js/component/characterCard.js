@@ -32,7 +32,7 @@ console.log(dataCharacter);
               </div>
               <div className="col d-flex justify-content-end">
               <button type="button" className="btn btn-outline-warning">
-              <i class="bi bi-heart"></i>
+              <i className="bi bi-heart"></i>
               </button>
             </div>
             </div>
