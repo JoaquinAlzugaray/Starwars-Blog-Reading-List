@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
+  console.log(store.favorites.lenght);
   return (
 	<nav className="navbar navbar-light bg-light">
 	<div className="container">
@@ -10,7 +13,7 @@ export const Navbar = () => {
 		</Link>
 		<div className="d-flex dropdown">
   <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Favorites
+  Favorites {store.favorites.lenght}
   </button>
   <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
     <li><a className="dropdown-item" href="#">Action</a></li>

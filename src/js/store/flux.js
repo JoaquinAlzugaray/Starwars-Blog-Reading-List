@@ -16,7 +16,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 			character: {},
 			planets: [],
-			planet: {}
+			planet: {},
+			favorites: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -36,6 +37,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then((response)=>response.json())
 				.then((data)=>setStore({character: data.result}))
 			},
+
+			addToFavorites: (id) =>{
+				setStore({ favorites: getStore().favorites.concat(id) })
+			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

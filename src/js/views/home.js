@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 export const Home = () => {
 	const {store, actions}=useContext(Context)
-	console.log(store.characters);
+	// console.log(store.characters);
 	const cards = store.characters.map((item, index) => {
 		return 	<CharacterCard key={index}
 		// name={item.name}

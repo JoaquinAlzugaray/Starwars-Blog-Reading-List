@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
 export const CharacterCard = ({dataCharacter}) => {
   const { store, actions } = useContext(Context);
+console.log(store.favorites.length);  
   //console.log(store.characters);
   // const names = store.characters.map((item) => {
   //   return item.name
@@ -12,8 +13,8 @@ export const CharacterCard = ({dataCharacter}) => {
 // console.log(names);
 // let {name, gender} = dataCharacter; en lugar de usar ? para arrelgar el problema y volcar la info, desestrucutamos dataCharacter
 let id = dataCharacter?.url[dataCharacter?.url.length-2]
-console.log(id);
-console.log(dataCharacter);
+// console.log(id);
+// console.log(dataCharacter);
   return (
     <div className="card-group">
       <div className="card" style={{ margin: "25px", width: "20rem" }}>
@@ -31,7 +32,7 @@ console.log(dataCharacter);
               </Link>
               </div>
               <div className="col d-flex justify-content-end">
-              <button type="button" className="btn btn-outline-warning">
+              <button type="button" className="btn btn-outline-warning" onClick={()=>actions.addToFavorites(dataCharacter)}>
               <i className="bi bi-heart"></i>
               </button>
             </div>
