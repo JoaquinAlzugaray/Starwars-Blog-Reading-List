@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
-import { Card } from "../component/card";
+import { CharacterCard } from "../component/characterCard";
 import { Link } from "react-router-dom";
 
 // img="https://starwars-visualguide.com/assets/img/characters/1.jpg"
@@ -10,7 +10,7 @@ export const Home = () => {
 	const {store, actions}=useContext(Context)
 	console.log(store.characters);
 	const cards = store.characters.map((item, index) => {
-		return 	<Card key={index}
+		return 	<CharacterCard key={index}
 		// name={item.name}
 		// gender={item.gender}
 		// linkurl={`/single/${item.uid}`}
@@ -31,9 +31,9 @@ export const Home = () => {
 			<div className="container">
 				<h1>Planets</h1>
 				<div className="scrollmenu">
+				{/* <Card  />
 				<Card  />
-				<Card  />
-				<Card  />
+				<Card  /> */}
 				</div>
 			</div>
 			
