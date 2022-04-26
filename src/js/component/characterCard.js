@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 
 export const CharacterCard = ({dataCharacter}) => {
   const { store, actions } = useContext(Context);
-console.log(store.favorites.length);  
+
+console.log(store.favorites.length);
+console.log(store.favorites);  
   //console.log(store.characters);
   // const names = store.characters.map((item) => {
   //   return item.name
