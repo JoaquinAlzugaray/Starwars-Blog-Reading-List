@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
 import { CharacterCard } from "../component/characterCard";
+import { PlanetsCard } from "../component/planetsCard";
 import { Link } from "react-router-dom";
 
 // img="https://starwars-visualguide.com/assets/img/characters/1.jpg"
@@ -17,7 +18,10 @@ export const Home = () => {
 		dataCharacter = {{...item}}
 		/>
 	  })
-
+	//   console.log(store.planets);
+// const planetCards = store.planets.map((item, index) => ({
+// 	<PlanetsCard>
+// }) )
 	return (
 		<div>
 			<div className="container">
