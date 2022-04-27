@@ -44,6 +44,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then((data)=>setStore({planets: data.results}))
 			},
 
+			loadPlanet: (id) => {
+				fetch(`https://www.swapi.tech/api/planets/${id}`)
+				.then((response)=>response.json())
+				.then((data)=>setStore({planet: data.result}))
+			},
+
 			addToFavorites: (id) =>{
 				setStore({ favorites: getStore().favorites.concat(id) })
 			},

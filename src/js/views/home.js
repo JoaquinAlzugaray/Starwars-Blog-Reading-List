@@ -18,10 +18,16 @@ export const Home = () => {
 		dataCharacter = {{...item}}
 		/>
 	  })
-	//   console.log(store.planets);
-// const planetCards = store.planets.map((item, index) => ({
-// 	<PlanetsCard>
-// }) )
+	  console.log(store.planets);
+const cardsPlanet = store.planets.map((item, index) => (
+	<PlanetsCard key={index}
+	name= {item.name}
+	climate= {item.climate}
+	population= {item.population}
+	terrain= {item.terrain}
+	url= {item.url}
+	/>
+) )
 	return (
 		<div>
 			<div className="container">
@@ -35,9 +41,7 @@ export const Home = () => {
 			<div className="container">
 				<h1>Planets</h1>
 				<div className="scrollmenu">
-				{/* <Card  />
-				<Card  />
-				<Card  /> */}
+				{cardsPlanet}
 				</div>
 			</div>
 			

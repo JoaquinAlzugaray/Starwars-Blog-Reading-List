@@ -2,9 +2,12 @@ import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
-export const PlanetsCard = () => {
+export const PlanetsCard = (props) => {
   const { store, actions } = useContext(Context);
 console.log("hola");
+let id = props.url[props.url.length-2]
+console.log(id);
+// console.log(props.url);
 // console.log(store.favorites.length);
 // console.log(store.favorites);  
   //console.log(store.characters);
@@ -22,19 +25,18 @@ console.log("hola");
       <div className="card" style={{ margin: "25px", width: "20rem" }}>
         {/* <img src={dataCharacter?.img} className="card-img-top" alt="..." /> */}
         <div className="card-body">
-          <h5 className="card-title"></h5>
-          <p className="card-text">Gender: </p>
-          <p className="card-text">Hair Color: </p>
-          <p className="card-text">Eye Color: </p>
+          <h5 className="card-title">{props.name}</h5>
+          <p className="card-text">Population: {props.population} </p>
+          <p className="card-text">Terrain: {props.terrain} </p>
           <div className="container">
             <div className="row row-cols-2">
               <div className="col">
-              <Link className="btn btn-primary" to={`/single/${id}`}>
+              <Link className="btn btn-primary" to={`/singlePlanet/${id}`}>
                 Learn More!
               </Link>
               </div>
               <div className="col d-flex justify-content-end">
-              <button type="button" className="btn btn-outline-warning" onClick={()=>actions.addToFavorites()}>
+              <button type="button" className="btn btn-outline-warning" onClick={()=>actions.addToFavorites(props)}>
               <i className="bi bi-heart"></i>
               </button>
             </div>
