@@ -30,7 +30,7 @@ const cardsPlanet = store.planets.map((item, index) => (
 ) )
 	return (
 		<div>
-			<div className="container">
+			<div className="container mt-2">
 			<h1>Characters</h1>
 			</div>
 			<div className="container">
@@ -38,7 +38,7 @@ const cardsPlanet = store.planets.map((item, index) => (
 			{cards}
 				</div>
 			</div>
-			<div className="container">
+			<div className="container mt-2">
 				<h1>Planets</h1>
 				<div className="scrollmenu">
 				{cardsPlanet}

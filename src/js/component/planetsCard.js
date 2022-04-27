@@ -22,8 +22,8 @@ console.log(id);
 // console.log(dataCharacter);
   return (
     <div className="card-group">
-      <div className="card" style={{ margin: "25px", width: "20rem" }}>
-        {/* <img src={dataCharacter?.img} className="card-img-top" alt="..." /> */}
+      <div className="card" style={{ margin: "25px", width: "20rem", border:"none" }}>
+        <img src="https://lumiere-a.akamaihd.net/v1/images/tatooine-main_1633e73f.jpeg?region=164%2C0%2C953%2C536&width=160" className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{props.name}</h5>
           <p className="card-text">Population: {props.population} </p>
@@ -31,12 +31,12 @@ console.log(id);
           <div className="container">
             <div className="row row-cols-2">
               <div className="col">
-              <Link className="btn btn-primary" to={`/singlePlanet/${id}`}>
+              <Link className="btn btn-secondary" to={`/singlePlanet/${id}`}>
                 Learn More!
               </Link>
               </div>
               <div className="col d-flex justify-content-end">
-              <button type="button" className="btn btn-outline-warning" onClick={()=>actions.addToFavorites(props)}>
+              <button type="button" className="btn btn-outline-secondary" onClick={()=>actions.addToFavorites(props)}>
               <i className="bi bi-heart"></i>
               </button>
             </div>

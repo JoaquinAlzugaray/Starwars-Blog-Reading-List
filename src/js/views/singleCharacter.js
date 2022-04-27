@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Single = props => {
+export const SingleCharacter = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	console.log(store.character);
@@ -55,7 +55,7 @@ export const Single = props => {
   );
 };
 
-Single.propTypes = {
+SingleCharacter.propTypes = {
 	match: PropTypes.object
 };
 

@@ -19,8 +19,8 @@ let id = dataCharacter?.url[dataCharacter?.url.length-2]
 // console.log(dataCharacter);
   return (
     <div className="card-group">
-      <div className="card" style={{ margin: "25px", width: "20rem" }}>
-        {/* <img src={dataCharacter?.img} className="card-img-top" alt="..." /> */}
+      <div className="card" style={{ margin: "25px", width: "20rem", border:"none" }}>
+        <img src="https://lumiere-a.akamaihd.net/v1/images/luke-skywalker-main_fb34a1ff.jpeg?region=131%2C0%2C951%2C536&width=160" className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{dataCharacter?.name}</h5>
           <p className="card-text">Gender: {dataCharacter?.gender}</p>
@@ -29,12 +29,12 @@ let id = dataCharacter?.url[dataCharacter?.url.length-2]
           <div className="container">
             <div className="row row-cols-2">
               <div className="col">
-              <Link className="btn btn-primary" to={`/single/${id}`}>
+              <Link className="btn btn-secondary" to={`/singleCharacter/${id}`}>
                 Learn More!
               </Link>
               </div>
               <div className="col d-flex justify-content-end">
-              <button type="button" className="btn btn-outline-warning" onClick={()=>actions.addToFavorites(dataCharacter)}>
+              <button type="button" className="btn btn-outline-secondary" onClick={()=>actions.addToFavorites(dataCharacter)}>
               <i className="bi bi-heart"></i>
               </button>
             </div>
